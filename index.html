@@ -16,14 +16,14 @@
 </a>
 
 <nav id="mainNav">
-  <div id="navLogo" onclick="location.hash=''">Batista.Digital</div>
+  <div id="navLogo" onclick="navigateTo('/')">Batista.Digital</div>
   <div id="navMenu">
-    <a href="#about">Sobre</a>
-    <a href="#services">Serviços</a>
-    <a href="#portfolio">Portfólio</a>
-    <a href="#blog">Blog</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact" class="nav-cta">Solicitar Orçamento</a>
+    <a href="/about">Sobre</a>
+    <a href="/services">Serviços</a>
+    <a href="/portfolio">Portfólio</a>
+    <a href="/blog">Blog</a>
+    <a href="/faq">FAQ</a>
+    <a href="/contact" class="nav-cta">Solicitar Orçamento</a>
   </div>
   <button id="navToggle">☰</button>
 </nav>
@@ -35,8 +35,8 @@
       <h1 id="heroTitle"></h1>
       <p id="heroSubtitle"></p>
       <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">Solicitar Orçamento</a>
-        <a href="#portfolio" class="btn btn-outline">Ver Portfólio</a>
+        <a href="/contact" class="btn btn-primary">Solicitar Orçamento</a>
+        <a href="/portfolio" class="btn btn-outline">Ver Portfólio</a>
       </div>
     </div>
     <div class="hero-scroll">↓</div>
@@ -82,7 +82,7 @@
   <div class="cta-banner reveal">
     <h2>Pronto para transformar seu negócio?</h2>
     <p>Solicite um orçamento gratuito e descubra como podemos ajudar.</p>
-    <a href="#contact" class="btn">Solicitar Orçamento</a>
+    <a href="/contact" class="btn">Solicitar Orçamento</a>
   </div>
 
   <section id="about">
@@ -219,7 +219,7 @@
       <div class="admin-nav-item" data-admin-section="privacy" onclick="showAdminSection('privacy')">🔒 Privacidade</div>
       <div class="admin-nav-item" data-admin-section="users" onclick="showAdminSection('users')">👥 Usuários</div>
       <div class="admin-nav-item" data-admin-section="backup" onclick="showAdminSection('backup')">💾 Backup</div>
-      <div class="admin-nav-item" onclick="location.hash=''">← Voltar ao site</div>
+      <div class="admin-nav-item" onclick="navigateTo('/')">← Voltar ao site</div>
       <div class="admin-nav-item" id="adminLogout" style="color:#e53935">⏻ Sair</div>
     </div>
 

@@ -242,7 +242,7 @@ function renderHero() {
       <p id="heroSubtitle"></p>
       <div class="hero-buttons">
         <a href="#" id="heroQuoteBtn" class="btn btn-primary">Solicitar Orçamento</a>
-        <a href="#portfolio" class="btn btn-outline">Ver Portfólio</a>
+        <a href="/portfolio" class="btn btn-outline">Ver Portfólio</a>
       </div>
     </div>
     <div class="hero-scroll">↓</div>
@@ -310,7 +310,7 @@ function renderServices() {
       <div class="service-icon">${s.icon}</div>
       <h3 class="service-title">${s.title}</h3>
       <p class="service-desc">${s.description}</p>
-      <a href="#contact" class="service-link" data-service="${s.title}">Saiba Mais →</a>
+      <a href="/contact" class="service-link" data-service="${s.title}">Saiba Mais →</a>
     </div>
   `).join("");
   document.querySelectorAll(".service-link").forEach(link => {
@@ -447,26 +447,26 @@ function renderFooter() {
       </div>
       <div class="footer-col">
         <h4>Empresa</h4>
-        <a href="#about">Sobre Nós</a>
-        <a href="#services">Serviços</a>
-        <a href="#portfolio">Portfólio</a>
-        <a href="#blog">Blog</a>
+        <a href="/about">Sobre Nós</a>
+        <a href="/services">Serviços</a>
+        <a href="/portfolio">Portfólio</a>
+        <a href="/blog">Blog</a>
       </div>
       <div class="footer-col">
         <h4>Serviços</h4>
-        ${content.services.slice(0, 5).map(s => `<a href="#services">${s.title}</a>`).join("")}
+        ${content.services.slice(0, 5).map(s => `<a href="/services">${s.title}</a>`).join("")}
       </div>
       <div class="footer-col">
         <h4>Contato</h4>
         <p>${content.company.phone}</p>
         <p>${content.company.email}</p>
         <p>${content.company.address}</p>
-        <a href="#contact" class="btn btn-primary btn-sm footer-cta">Solicitar Orçamento</a>
+        <a href="/contact" class="btn btn-primary btn-sm footer-cta">Solicitar Orçamento</a>
       </div>
     </div>
     <div class="footer-bottom">
       <p>${content.footer.copyright}</p>
-      <p><a href="#privacidade">Política de Privacidade</a> · <a href="#admin">Admin</a></p>
+      <p><a href="/privacidade">Política de Privacidade</a> · <a href="/admin">Admin</a></p>
     </div>
   `;
 }
@@ -609,15 +609,16 @@ function renderBlogList() {
             <span class="blog-date">${new Date(post.date).toLocaleDateString("pt-BR")}</span>
             <h3>${post.title}</h3>
             <p>${post.excerpt}</p>
-            <a href="#blog/${post.id}" class="blog-readmore">Leia mais →</a>
+            <a href="/blog/${post.id}" class="blog-readmore">Leia mais →</a>
           </div>
         </article>
       `).join("")}
     </div>
   `;
   document.querySelectorAll(".blog-card").forEach(card => {
-    card.addEventListener("click", () => {
-      window.location.hash = `blog/${card.dataset.id}`;
+    card.addEventListener("click", (ev) => {
+      if (ev.target.closest("a")) return;
+      navigateTo("/blog/" + card.dataset.id);
     });
   });
   setupAnimations();
@@ -632,7 +633,7 @@ function renderBlogPost(id) {
   }
   ctn.innerHTML = `
     <article class="blog-post">
-      <a href="#blog" class="blog-back">← Voltar ao Blog</a>
+      <a href="/blog" class="blog-back">← Voltar ao Blog</a>
       <div class="blog-post-img"><img src="${post.image}" alt="${post.title}"></div>
       <div class="blog-post-meta">
         <span>${new Date(post.date).toLocaleDateString("pt-BR")}</span>
@@ -643,7 +644,7 @@ function renderBlogPost(id) {
       <div class="blog-cta">
         <h3>Gostou do conteúdo?</h3>
         <p>Fale conosco e descubra como podemos ajudar seu negócio a crescer.</p>
-        <a href="#contact" class="btn btn-primary">Solicitar Orçamento</a>
+        <a href="/contact" class="btn btn-primary">Solicitar Orçamento</a>
       </div>
     </article>
   `;
@@ -652,7 +653,7 @@ function renderBlogPost(id) {
 function renderPrivacy() {
   document.getElementById("privacyContent").innerHTML = `
     <div class="privacy-page">
-      <a href="#" class="blog-back">← Voltar ao site</a>
+      <a href="/" class="blog-back">← Voltar ao site</a>
       <h1>${content.privacy.title}</h1>
       <div class="privacy-text">${content.privacy.text.replace(/\n/g, "<br>")}</div>
     </div>
@@ -697,9 +698,27 @@ function showPage(page, sub) {
   }
 }
 
+function getRoute() {
+  const p = window.location.pathname || "";
+  const m = p.match(/\/(about|services|portfolio|process|faq|contact|blog(?:\/[A-Za-z0-9_-]+)?|privacidade|admin)$/i);
+  if (m) return m[0].slice(1);
+  const h = (window.location.hash || "").replace(/^#/, "");
+  if (h.startsWith("batista.digital")) return "";
+  return h.replace(/^\//, "");
+}
+
+function navigateTo(route) {
+  const path = "/" + String(route || "").replace(/^\/+/, "");
+  try {
+    history.pushState({ route }, "", path);
+  } catch (e) {
+    window.location.hash = String(route || "").replace(/^\//, "");
+  }
+  handleRoute();
+}
+
 function handleRoute() {
-  const hash = window.location.hash.slice(1);
-  const parts = hash.split("/");
+  const parts = getRoute().split("/");
   if (parts[0] === "admin") {
     showPage("admin");
   } else if (parts[0] === "blog") {
@@ -716,6 +735,18 @@ function handleRoute() {
     }
   }
 }
+
+document.addEventListener("click", (e) => {
+  const a = e.target.closest('a[href]');
+  if (!a) return;
+  const href = a.getAttribute("href");
+  if (!href || !href.startsWith("/")) return;
+  if (a.target && a.target !== "_self") return;
+  e.preventDefault();
+  navigateTo(href.slice(1) || "");
+});
+
+window.addEventListener("popstate", handleRoute);
 
 function setupCounterAnimations() {
   const observer = new IntersectionObserver((entries) => {
@@ -781,7 +812,7 @@ async function initSite() {
   setupParallax();
   setupCounterAnimations();
   setupFooterCTA();
-  window.addEventListener("hashchange", handleRoute);
+  window.addEventListener("popstate", handleRoute);
   handleRoute();
   window.dispatchEvent(new CustomEvent("siteReady"));
 }
