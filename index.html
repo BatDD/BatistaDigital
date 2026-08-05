@@ -1,11 +1,391 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Meu Site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batista.Digital — Agência de Marketing Digital | Sites, Ads e SEO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/styles.css">
+<link rel="icon" id="favicon" href="https://user.uploads.dev/file/ad17ae99c92a0ede2e34f7487f90876e.jpg">
 </head>
 <body>
-    <h1>Olá, Mundo! Este é meu site no GitHub Pages.</h1>
-    <h1>Meu Site está no ar!</h1>
+<a href="#" id="waFloatBtn" class="wa-float-btn" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav id="mainNav">
+  <div id="navLogo" onclick="location.hash=''">Batista.Digital</div>
+  <div id="navMenu">
+    <a href="#about">Sobre</a>
+    <a href="#services">Serviços</a>
+    <a href="#portfolio">Portfólio</a>
+    <a href="#blog">Blog</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="nav-cta">Solicitar Orçamento</a>
+  </div>
+  <button id="navToggle">☰</button>
+</nav>
+
+<div id="mainPage">
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-badge" id="heroBadge"></div>
+      <h1 id="heroTitle"></h1>
+      <p id="heroSubtitle"></p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Solicitar Orçamento</a>
+        <a href="#portfolio" class="btn btn-outline">Ver Portfólio</a>
+      </div>
+    </div>
+    <div class="hero-scroll">↓</div>
+  </section>
+
+  <section id="stats">
+    <div id="statsGrid"></div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Nossos Serviços</span>
+        <h2 class="section-title">Soluções Digitais Completas</h2>
+        <p class="section-subtitle">Tudo o que sua marca precisa para crescer no ambiente digital, em um só lugar.</p>
+      </div>
+      <div id="servicesGrid"></div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Como Funciona</span>
+        <h2 class="section-title">Nosso Processo</h2>
+        <p class="section-subtitle">Do primeiro contato ao suporte contínuo, cuidamos de cada detalhe.</p>
+      </div>
+      <div id="processGrid"></div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Portfólio</span>
+        <h2 class="section-title">Projetos que Deliveram</h2>
+        <p class="section-subtitle">Conheça alguns dos trabalhos que transformaram marcas e negócios.</p>
+      </div>
+      <div id="portfolioGrid"></div>
+    </div>
+  </section>
+
+  <div class="cta-banner reveal">
+    <h2>Pronto para transformar seu negócio?</h2>
+    <p>Solicite um orçamento gratuito e descubra como podemos ajudar.</p>
+    <a href="#contact" class="btn">Solicitar Orçamento</a>
+  </div>
+
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap reveal">
+          <img id="aboutImage" src="" alt="Equipe Batista.Digital" loading="lazy">
+        </div>
+        <div class="about-text reveal">
+          <span class="section-tag">Sobre Nós</span>
+          <h2 id="aboutTitle"></h2>
+          <p id="aboutText"></p>
+        </div>
+      </div>
+      <div id="aboutValues"></div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Depoimentos</span>
+        <h2 class="section-title">O Que Dizem Nossos Clientes</h2>
+        <p class="section-subtitle">A satisfação de quem confia na gente é nosso maior orgulho.</p>
+      </div>
+      <div id="testimonialsGrid"></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">Perguntas Frequentes</h2>
+        <p class="section-subtitle">Tire suas dúvidas antes de começar.</p>
+      </div>
+      <div id="faqList"></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Contato</span>
+        <h2 class="section-title">Vamos Conversar</h2>
+        <p class="section-subtitle">Conte seu desafio e receba uma proposta personalizada.</p>
+      </div>
+      <div class="contact-grid">
+        <div id="contactInfo"></div>
+        <div class="contact-form-wrap">
+          <form id="contactForm">
+            <div class="form-group">
+              <label>Nome</label>
+              <input type="text" name="name" required placeholder="Seu nome completo">
+            </div>
+            <div class="form-group">
+              <label>E-mail</label>
+              <input type="email" name="email" required placeholder="seu@email.com">
+            </div>
+            <div class="form-group">
+              <label>Telefone / WhatsApp</label>
+              <input type="text" name="phone" placeholder="(11) 99999-9999">
+            </div>
+            <div class="form-group">
+              <label>Serviço de Interesse</label>
+              <select name="service" id="formService">
+                <option value="">Selecione um serviço</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Mensagem</label>
+              <textarea name="message" rows="4" required placeholder="Conte sobre seu projeto..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Enviar Mensagem</button>
+          </form>
+          <div id="formSuccess" class="form-success-msg" style="display:none">
+            ✓ Mensagem enviada com sucesso! Entraremos em contato em breve.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="mainFooter"></footer>
+</div>
+
+<div id="blogPage" hidden>
+  <div id="blogListContainer"></div>
+  <div id="blogPostContainer" hidden></div>
+</div>
+
+<div id="privacyPage" hidden>
+  <div id="privacyContent"></div>
+</div>
+
+<div id="adminPanel" hidden>
+  <div id="adminLoginScreen">
+    <div class="admin-login-box">
+      <h2>Painel Administrativo</h2>
+      <p>Batista.Digital — Acesso restrito</p>
+      <form id="adminLoginForm">
+        <div class="form-group">
+          <label>Usuário</label>
+          <input type="text" name="username" required placeholder="admin" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label>Senha</label>
+          <input type="password" name="password" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Entrar</button>
+      </form>
+      <div id="adminLoginError" class="admin-login-error">Usuário ou senha incorretos.</div>
+    </div>
+  </div>
+
+  <div id="adminDashboard">
+    <div class="admin-sidebar">
+      <div class="admin-sidebar-logo">Batista.Digital</div>
+      <div class="admin-nav-item active" data-admin-section="messages" onclick="showAdminSection('messages')">📨 Mensagens</div>
+      <div class="admin-nav-item" data-admin-section="company" onclick="showAdminSection('company')">🏢 Empresa & Logo</div>
+      <div class="admin-nav-item" data-admin-section="hero" onclick="showAdminSection('hero')">🖼️ Hero / Banner</div>
+      <div class="admin-nav-item" data-admin-section="stats" onclick="showAdminSection('stats')">📊 Números</div>
+      <div class="admin-nav-item" data-admin-section="services" onclick="showAdminSection('services')">🛠️ Serviços</div>
+      <div class="admin-nav-item" data-admin-section="process" onclick="showAdminSection('process')">⚙️ Processo</div>
+      <div class="admin-nav-item" data-admin-section="portfolio" onclick="showAdminSection('portfolio')">📁 Portfólio</div>
+      <div class="admin-nav-item" data-admin-section="about" onclick="showAdminSection('about')">ℹ️ Sobre</div>
+      <div class="admin-nav-item" data-admin-section="testimonials" onclick="showAdminSection('testimonials')">💬 Depoimentos</div>
+      <div class="admin-nav-item" data-admin-section="faq" onclick="showAdminSection('faq')">❓ FAQ</div>
+      <div class="admin-nav-item" data-admin-section="blog" onclick="showAdminSection('blog')">📝 Blog</div>
+      <div class="admin-nav-item" data-admin-section="social" onclick="showAdminSection('social')">📱 Redes Sociais</div>
+      <div class="admin-nav-item" data-admin-section="colors" onclick="showAdminSection('colors')">🎨 Cores</div>
+      <div class="admin-nav-item" data-admin-section="seo" onclick="showAdminSection('seo')">🔍 SEO</div>
+      <div class="admin-nav-item" data-admin-section="footer" onclick="showAdminSection('footer')">🦶 Rodapé</div>
+      <div class="admin-nav-item" data-admin-section="privacy" onclick="showAdminSection('privacy')">🔒 Privacidade</div>
+      <div class="admin-nav-item" data-admin-section="users" onclick="showAdminSection('users')">👥 Usuários</div>
+      <div class="admin-nav-item" data-admin-section="backup" onclick="showAdminSection('backup')">💾 Backup</div>
+      <div class="admin-nav-item" onclick="location.hash=''">← Voltar ao site</div>
+      <div class="admin-nav-item" id="adminLogout" style="color:#e53935">⏻ Sair</div>
+    </div>
+
+    <div class="admin-content">
+      <div class="admin-header">
+        <h2 id="adminSectionTitle">Mensagens</h2>
+      </div>
+
+      <div class="admin-section" id="adminSection_messages">
+        <h3>Mensagens Recebidas</h3>
+        <p>Todas as mensagens enviadas através do formulário de contato.</p>
+        <div id="adminMessages"></div>
+      </div>
+
+      <div class="admin-section" id="adminSection_company" hidden>
+        <h3>Dados da Empresa</h3>
+        <div class="admin-field-group"><label class="admin-label">Nome da Empresa</label><input class="admin-input" id="editCompanyName"></div>
+        <div class="admin-field-group"><label class="admin-label">Telefone</label><input class="admin-input" id="editCompanyPhone"></div>
+        <div class="admin-field-group"><label class="admin-label">WhatsApp (somente números, ex: 5511999999999)</label><input class="admin-input" id="editCompanyWhatsapp"></div>
+        <div class="admin-field-group"><label class="admin-label">E-mail</label><input class="admin-input" id="editCompanyEmail"></div>
+        <div class="admin-field-group"><label class="admin-label">Endereço</label><input class="admin-input" id="editCompanyAddress"></div>
+        <div class="admin-field-group"><label class="admin-label">Logo (URL da imagem)</label><input class="admin-input" id="editLogoUrl"></div>
+        <div class="admin-field-group"><label class="admin-label">Ou faça upload do logo</label><div class="admin-file-upload"><input type="file" accept="image/*" onchange="uploadImage(this.files[0], 'editLogoUrl')"></div></div>
+        <button class="btn btn-primary" onclick="saveCompany()">Salvar</button>
+      </div>
+
+      <div class="admin-section" id="adminSection_hero" hidden>
+        <h3>Seção Hero (Banner Principal)</h3>
+        <div class="admin-field-group"><label class="admin-label">Badge (texto superior)</label><input class="admin-input" id="editHeroBadge"></div>
+        <div class="admin-field-group"><label class="admin-label">Título Principal</label><input class="admin-input" id="editHeroTitle"></div>
+        <div class="admin-field-group"><label class="admin-label">Subtítulo</label><textarea class="admin-input admin-textarea" id="editHeroSubtitle"></textarea></div>
+        <h3 style="margin-top:20px">Imagens do Carrossel</h3>
+        <div id="adminHeroImages"></div>
+        <button class="btn btn-outline btn-sm admin-add-btn" onclick="addHeroImage()">+ Adicionar Imagem (URL)</button>
+        <div class="admin-field-group" style="margin-top:16px"><label class="admin-label">Ou faça upload de uma imagem para o carrossel</label><div class="admin-file-upload"><input type="file" accept="image/*" onchange="uploadHeroImage(this.files[0])"></div></div>
+        <div style="margin-top:20px"><button class="btn btn-primary" onclick="saveHero()">Salvar Textos</button></div>
+      </div>
+
+      <div class="admin-section" id="adminSection_stats" hidden>
+        <h3>Números da Empresa</h3>
+        <div id="adminStatsList"></div>
+        <button class="btn btn-outline btn-sm admin-add-btn" onclick="addStat()">+ Adicionar</button>
+      </div>
+
+      <div class="admin-section" id="adminSection_services" hidden>
+        <h3>Serviços</h3>
+        <div id="adminServicesList"></div>
+        <button class="btn btn-outline btn-sm admin-add-btn" onclick="addService()">+ Adicionar Serviço</button>
+      </div>
+
+      <div class="admin-section" id="adminSection_process" hidden>
+        <h3>Processo</h3>
+        <div id="adminProcessList"></div>
+        <button class="btn btn-outline btn-sm admin-add-btn" onclick="addProcess()">+ Adicionar Etapa</button>
+      </div>
+
+      <div class="admin-section" id="adminSection_portfolio" hidden>
+        <h3>Portfólio</h3>
+        <div id="adminPortfolioList"></div>
+        <button class="btn btn-outline btn-sm admin-add-btn" onclick="addPortfolio()">+ Adicionar Projeto</button>
+      </div>
+
+      <div class="admin-section" id="adminSection_about" hidden>
+        <h3>Sobre Nós</h3>
+        <div class="admin-field-group"><label class="admin-label">Título</label><input class="admin-input" id="editAboutTitle"></div>
+        <div class="admin-field-group"><label class="admin-label">Texto</label><textarea class="admin-input admin-textarea" id="editAboutText" rows="6"></textarea></div>
+        <div class="admin-field-group"><label class="admin-label">Imagem (URL)</label><input class="admin-input" id="editAboutImage"></div>
+        <div class="admin-field-group"><label class="admin-label">Ou faça upload da imagem</label><div class="admin-file-upload"><input type="file" accept="image/*" onchange="uploadImage(this.files[0], 'editAboutImage')"></div></div>
+        <h3 style="margin-top:30px">Valores</h3>
+        <div id="adminValuesList"></div>
+        <button class="btn btn-outline btn-sm admin-add-btn" onclick="addValue()">+ Adicionar Valor</button>
+        <div style="margin-top:20px"><button class="btn btn-primary" onclick="saveAbout()">Salvar</button></div>
+      </div>
+
+      <div class="admin-section" id="adminSection_testimonials" hidden>
+        <h3>Depoimentos</h3>
+        <div id="adminTestimonialsList"></div>
+        <button class="btn btn-outline btn-sm admin-add-btn" onclick="addTestimonial()">+ Adicionar Depoimento</button>
+      </div>
+
+      <div class="admin-section" id="adminSection_faq" hidden>
+        <h3>Perguntas Frequentes</h3>
+        <div id="adminFaqList"></div>
+        <button class="btn btn-outline btn-sm admin-add-btn" onclick="addFAQ()">+ Adicionar Pergunta</button>
+      </div>
+
+      <div class="admin-section" id="adminSection_blog" hidden>
+        <h3>Blog</h3>
+        <div id="adminBlogList"></div>
+        <button class="btn btn-outline btn-sm admin-add-btn" onclick="addBlog()">+ Adicionar Artigo</button>
+      </div>
+
+      <div class="admin-section" id="adminSection_social" hidden>
+        <h3>Redes Sociais</h3>
+        <div class="admin-field-group"><label class="admin-label">Instagram</label><input class="admin-input" id="editInstagram"></div>
+        <div class="admin-field-group"><label class="admin-label">Facebook</label><input class="admin-input" id="editFacebook"></div>
+        <div class="admin-field-group"><label class="admin-label">LinkedIn</label><input class="admin-input" id="editLinkedin"></div>
+        <div class="admin-field-group"><label class="admin-label">YouTube</label><input class="admin-input" id="editYoutube"></div>
+        <div class="admin-field-group"><label class="admin-label">TikTok</label><input class="admin-input" id="editTiktok"></div>
+        <button class="btn btn-primary" onclick="saveSocial()">Salvar</button>
+      </div>
+
+      <div class="admin-section" id="adminSection_colors" hidden>
+        <h3>Cores do Site</h3>
+        <div class="admin-color-row"><input type="color" id="editColorPrimary"><label class="admin-label" style="margin:0">Cor Primária</label><input class="admin-input" id="editColorPrimaryText" style="flex:0;width:120px" onchange="document.getElementById('editColorPrimary').value=this.value"></div>
+        <div class="admin-color-row"><input type="color" id="editColorSecondary"><label class="admin-label" style="margin:0">Cor Secundária</label><input class="admin-input" id="editColorSecondaryText" style="flex:0;width:120px" onchange="document.getElementById('editColorSecondary').value=this.value"></div>
+        <div class="admin-color-row"><input type="color" id="editColorAccent"><label class="admin-label" style="margin:0">Cor de Destaque</label><input class="admin-input" id="editColorAccentText" style="flex:0;width:120px" onchange="document.getElementById('editColorAccent').value=this.value"></div>
+        <div class="admin-color-row"><input type="color" id="editColorDark"><label class="admin-label" style="margin:0">Fundo Escuro</label><input class="admin-input" id="editColorDarkText" style="flex:0;width:120px" onchange="document.getElementById('editColorDark').value=this.value"></div>
+        <div class="admin-color-row"><input type="color" id="editColorDarker"><label class="admin-label" style="margin:0">Fundo Mais Escuro</label><input class="admin-input" id="editColorDarkerText" style="flex:0;width:120px" onchange="document.getElementById('editColorDarker').value=this.value"></div>
+        <button class="btn btn-primary" onclick="saveColors()" style="margin-top:20px">Salvar Cores</button>
+      </div>
+
+      <div class="admin-section" id="adminSection_seo" hidden>
+        <h3>SEO</h3>
+        <div class="admin-field-group"><label class="admin-label">Título SEO</label><input class="admin-input" id="editSeoTitle"></div>
+        <div class="admin-field-group"><label class="admin-label">Descrição SEO</label><textarea class="admin-input admin-textarea" id="editSeoDesc"></textarea></div>
+        <div class="admin-field-group"><label class="admin-label">Palavras-chave</label><input class="admin-input" id="editSeoKeywords"></div>
+        <div class="admin-field-group"><label class="admin-label">Imagem OG (URL)</label><input class="admin-input" id="editSeoImage"></div>
+        <div class="admin-field-group"><label class="admin-label">Ou faça upload da imagem</label><div class="admin-file-upload"><input type="file" accept="image/*" onchange="uploadImage(this.files[0], 'editSeoImage')"></div></div>
+        <button class="btn btn-primary" onclick="saveSEO()">Salvar</button>
+      </h4>
+      </div>
+
+      <div class="admin-section" id="adminSection_footer" hidden>
+        <h3>Rodapé</h3>
+        <div class="admin-field-group"><label class="admin-label">Texto do Rodapé</label><input class="admin-input" id="editFooterText"></div>
+        <div class="admin-field-group"><label class="admin-label">Copyright</label><input class="admin-input" id="editFooterCopyright"></div>
+        <button class="btn btn-primary" onclick="saveFooter()">Salvar</button>
+      </div>
+
+      <div class="admin-section" id="adminSection_privacy" hidden>
+        <h3>Política de Privacidade</h3>
+        <div class="admin-field-group"><label class="admin-label">Texto da Política</label><textarea class="admin-input admin-textarea" id="editPrivacyText" rows="10"></textarea></div>
+        <button class="btn btn-primary" onclick="savePrivacy()">Salvar</button>
+      </div>
+
+      <div class="admin-section" id="adminSection_users" hidden>
+        <h3>Usuários do Painel</h3>
+        <div id="adminUsersList"></div>
+        <button class="btn btn-outline btn-sm admin-add-btn" onclick="addUser()">+ Adicionar Usuário</button>
+      </div>
+
+      <div class="admin-section" id="adminSection_backup" hidden>
+        <h3>Backup & Restauração</h3>
+        <p>Faça backup de todo o conteúdo do site ou restaure a partir de um arquivo.</p>
+        <button class="btn btn-primary" onclick="exportBackup()">📥 Exportar Backup</button>
+        <div style="margin-top:20px"><label class="admin-label">Restaurar a partir de arquivo:</label><input type="file" accept=".json" onchange="importBackup(event)" class="admin-file-upload"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="src/app.js"></script>
+<script src="src/admin.js"></script>
+<script src="src/export.js"></script>
+<script>
+  function tryInitAdmin() {
+    if (typeof initAdmin === "function") {
+      initAdmin();
+    } else {
+      setTimeout(tryInitAdmin, 200);
+    }
+  }
+  window.addEventListener("siteReady", tryInitAdmin);
+  if (document.readyState === "complete") tryInitAdmin();
+</script>
 
 </body>
 </html>
