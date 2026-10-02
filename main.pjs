@@ -1,9 +1,0 @@
-superFetch = {import:super-fetch-plugin}
-
-$meta
-  title = Batista 3D — Designer de Joias & Modelagem 3D
-  description = Batista 3D: design e modelagem 3D de joias sob medida. Do croqui à peça pronta — portfólio, processo, serviços e cotação do ouro e da prata em tempo real.
-  image = https://user.uploads.dev/file/736f79169a5348fa3a7148a49e8f1746.jpg
-  tags = batista 3d, designer de joias, joalheria, modelagem 3d, cad, ourivesaria, joias sob medida, anel, portfólio
-  header
-    mode = minimal
