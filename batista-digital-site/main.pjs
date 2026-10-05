@@ -1,2 +1,0 @@
-kv = {import:kv-plugin}
-uploadPlugin = {import:upload-plugin}
