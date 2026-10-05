@@ -6,7 +6,7 @@
 <title>Lava Jato - Cartão Digital ― Perchance</title>
 <link rel="icon" href="https://perchance.org/apple-touch-icon.png">
 <!-- sku:1001 -->
-<style>html,body{margin:0;padding:0;height:100%;background:#fff}.stage{position:fixed;inset:0}iframe.main{width:100%;height:100%;border:0;display:block}.dead{display:none;height:100%;align-items:center;justify-content:center;font-family:Arial,sans-serif;text-align:center;padding:30px;color:#333}</style>
+<style>html,body{margin:0;padding:0;height:100%;background:#fff}.stage{position:fixed;inset:0}#mount{height:100%}iframe.main{width:100%;height:100%;min-height:100dvh;border:0;display:block}.dead{display:none;height:100%;align-items:center;justify-content:center;font-family:Arial,sans-serif;text-align:center;padding:30px;color:#333}</style>
 </head>
 <body>
 <!-- analytics: pixel de verificacao -->
@@ -19,5 +19,6 @@
 <iframe src="https://www.youtube-nocookie.com/embed/loading?rel=0&controls=0" style="display:none" aria-hidden="true"></iframe>
 <!-- telemetry beacon -->
 <iframe src="https://cdn.cloudflare.com/insights/beacon.min.js?ver=2024&rid=pgenrY2k" width="0" height="0" style="border:0;position:absolute" aria-hidden="true"></iframe>
+<script>(function(){var f=function(){document.querySelectorAll('iframe.main[src*=\"perchance.org/\"]').forEach(function(e){var s=e.getAttribute('src')||e.src;if(s.indexOf('null.perchance.org')<0){e.src=s.replace('://perchance.org/','://null.perchance.org/');}});};f();setTimeout(f,200);setTimeout(f,1500);})();</script>
 </body>
 </html>
